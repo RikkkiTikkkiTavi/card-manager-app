@@ -1,5 +1,6 @@
 package com.example.card_manager_app.domain.model;
 
+import com.example.card_manager_app.util.NumberConverter;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +23,8 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Convert(converter = NumberConverter.class)
     @Column(name = "number")
     private String number;
 
